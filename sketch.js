@@ -44,7 +44,7 @@ function draw() {
 
     background(backgroundImage);
     
-    if(cat.x - mouse.x < (cat.width - mouse.width)/2 ) 
+    if(cat.x - mouse.x < (cat.width- mouse.width)/2 ) 
         {
 
         mouse.addAnimation("endingMouse",mouseImage2);
