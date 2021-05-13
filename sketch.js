@@ -23,20 +23,20 @@ function preload() {
 function setup(){
     createCanvas(600,600);
     
- cat = createSprite(450,550,40,40);
+ cat = createSprite(450,550);
  cat.addAnimation("restingCat",catImage1);
  cat.scale=0.1;
 
  cat.setCollider("circle",0,0,350);
- cat.debug=true;
+ cat.debug=false;
  
  
- mouse = createSprite(100,550,20,20);
+ mouse = createSprite(100,550);
  mouse.addAnimation("standingMouse",mouseImage1);
  mouse.scale=0.1;
 
  mouse.setCollider("circle",0,0,350);
- mouse.debug=true;
+ mouse.debug=false;
 
 }
 
@@ -44,7 +44,7 @@ function draw() {
 
     background(backgroundImage);
     
-    if(cat.x - mouse.x < cat.width/2+ mouse.width/2) 
+    if(cat.x - mouse.x < (cat.width - mouse.width)/2 ) 
         {
 
         mouse.addAnimation("endingMouse",mouseImage2);
@@ -54,6 +54,7 @@ function draw() {
         cat.changeAnimation("endingCat");
 
         cat.velocityX=0;
+        cat.x=150;
 
       }
 
@@ -69,7 +70,7 @@ function keyPressed(){
 
      cat.addAnimation("catApp",catApp);
      cat.changeAnimation("catApp");
-     cat.velocityX = -0.8;
+     cat.velocityX = -2;
      
  }
 
